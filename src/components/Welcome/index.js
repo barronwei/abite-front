@@ -3,7 +3,7 @@ import { Container, Text } from './styles'
 
 const Welcome = () => (
   <Container>
-    <Text>DEV Winter Bootcamp React Starter!</Text>
+    <Text>A Bite of Home</Text>
   </Container>
 )
 

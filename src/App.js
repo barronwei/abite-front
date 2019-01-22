@@ -6,6 +6,8 @@ import theme from './theme'
 import config from './config'
 import Home from './containers/Home/'
 import ApolloClient from 'apollo-boost'
+import Login from './containers/Home/components /LoginModal/Login'
+import SignUp from './containers/Home/components /LoginModal/SignUp'
 
 // creates new client
 const client = new ApolloClient({
@@ -20,7 +22,9 @@ class App extends Component {
           <ApolloProvider client={client}>
             <div className="App">
               <Switch>
-                <Route path="/" component={Home} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/Login" component={Login} />
+                <Route exact path="/Register" component={SignUp} />
               </Switch>
             </div>
           </ApolloProvider>
