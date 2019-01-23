@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { Flex } from 'grid-styled'
 
 export const Title = styled(Flex)`
-  color: #2473f2;
-  font-size: 50px;
+  color: gray;
+  font-size: 25px;
   margin-bottom: 20px;
 `
 
@@ -34,4 +34,11 @@ export const SecondaryOptionText = styled(Flex)`
   &:hover {
     opacity: 0.8;
   }
+`
+
+export const Container = styled(Flex)`
+  /* background-color: ${({ theme }) => theme.colors.devLogo}; */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 `

@@ -3,7 +3,7 @@ import { Flex } from 'grid-styled'
 import { Link } from 'react-router-dom'
 
 export const Container = styled(Flex)`
-  background-color: darkgrey;
+  background-color: antiquewhite;
   flex-direction: row;
   width: 100vw;
   height: 3rem;
@@ -13,5 +13,5 @@ export const Container = styled(Flex)`
 
 export const StyledLink = styled(Link)`
   font-size: 1.5rem;
-  color: white;
+  color: salmon;
 `
