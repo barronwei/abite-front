@@ -6,7 +6,7 @@ WebFont.load({
   }
 })
 
-const theme = {
+export const theme = {
   colors: {
     devLogo: '#FC6264',
     mainBackground: '#FFF'
@@ -19,4 +19,12 @@ const theme = {
   }
 }
 
-export default theme
+export const grommetTheme = {
+  anchor: {
+    fontWeight: 300,
+    hover: {
+      textDecoration: 'none',
+      fontWeight: 600
+    }
+  }
+}

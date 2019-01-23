@@ -1,19 +1,17 @@
-const Title = styled.h1`
-  font-size: 2.5em;
-  text-align: right;
-  color: coral;
-`;
-const Subtitle = styled.h3`
-  font-size: 1.5em;
-  text-align: center;
-  color: gray;
-`;
+import styled from 'styled-components'
+import { Flex } from 'grid-styled'
 
-const Button = styled.button`
-  color: gray;
-  padding: 2.5rem, 1rem;
-  border: solid 2px coral;
-  border-radius: 3px;
-  margin: 0.5rem;
-  font-size: 1rem;
-`;
+export const Text = styled(Flex)`
+  color: ${({ theme }) => theme.colors.mainBackground};
+  font-size: 5em;
+  font-family: ${({ theme }) => theme.fonts.primary.family};
+  font-weight: ${({ theme }) => theme.fonts.primary.weight};
+`
+
+export const Container = styled(Flex)`
+  background-color: ${({ theme }) => theme.colors.devLogo};
+  height: 15em;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+`
