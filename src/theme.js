@@ -2,18 +2,18 @@ import WebFont from 'webfontloader'
 
 WebFont.load({
   google: {
-    families: ['Source Sans Pro:400', 'sans-serif']
+    families: ['Montserrat:400', 'sans-serif']
   }
 })
 
 export const theme = {
   colors: {
-    devLogo: '#FC6264',
-    mainBackground: '#FFF'
+    devLogo: '#FA8072',
+    mainBackground: '#FAEBD7'
   },
   fonts: {
     primary: {
-      family: 'Source Sans Pro, sans-serif',
+      family: 'Montserrat, sans-serif',
       weight: 400
     }
   }

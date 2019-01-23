@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Welcome from '../../components/Welcome'
+import Favorites from '../../components/Favorites'
 import Navbar from '../../components/Navbar/'
 // import LoginModal from '../Home/components/LoginModal'
 
@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <Welcome />
+        <Favorites />
         <Navbar />
       </React.Fragment>
     )
