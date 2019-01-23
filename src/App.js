@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import { ApolloProvider } from 'react-apollo'
 import theme from './theme'
 import config from './config'
+import { Grommet } from 'grommet'
 import Home from './containers/Home/'
 import ApolloClient from 'apollo-boost'
 import Login from './containers/Home/components /LoginModal/Login'
@@ -14,22 +15,32 @@ const client = new ApolloClient({
   uri: config.graphqlUrl
 })
 
+const myTheme = {
+  global: {
+    font: {
+      family: 'Roboto'
+    }
+  }
+}
+
 class App extends Component {
   render() {
     return (
-      <Router>
-        <ThemeProvider theme={theme}>
-          <ApolloProvider client={client}>
-            <div className="App">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/Login" component={Login} />
-                <Route exact path="/Register" component={SignUp} />
-              </Switch>
-            </div>
-          </ApolloProvider>
-        </ThemeProvider>
-      </Router>
+      <Grommet plain>
+        <Router>
+          <ThemeProvider theme={theme}>
+            <ApolloProvider client={client}>
+              <div className="App">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/Login" component={Login} />
+                  <Route exact path="/Register" component={SignUp} />
+                </Switch>
+              </div>
+            </ApolloProvider>
+          </ThemeProvider>
+        </Router>
+      </Grommet>
     )
   }
 }
