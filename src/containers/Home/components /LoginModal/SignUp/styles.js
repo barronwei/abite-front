@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Flex } from 'grid-styled'
+import { Link } from 'react-router-dom'
 
 export const Title = styled(Flex)`
   color: gray;
@@ -18,8 +19,8 @@ export const SubmitButton = styled(Flex)`
   width: 200px;
   height: 40px;
   border-radius: 10px;
-  background-color: #2473f2;
-  align-items: center;
+  background-color: #000000;
+  align-self: center;
   justify-content: center;
   cursor: pointer;
   &:hover {
@@ -27,8 +28,9 @@ export const SubmitButton = styled(Flex)`
   }
 `
 export const SecondaryOptionText = styled(Flex)`
-  color: #2473f2;
+  color: gray;
   font-size: 12px;
+  align-self: center;
   margin-top: 10px;
   cursor: pointer;
   &:hover {
@@ -41,4 +43,9 @@ export const Container = styled(Flex)`
   justify-content: center;
   align-items: center;
   height: 100vh;
+`
+export const StyledLink = styled(Link)`
+  font-size: 0.8rem;
+  color: gray;
+  text-decoration: none;
 `

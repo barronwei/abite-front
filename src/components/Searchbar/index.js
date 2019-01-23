@@ -10,7 +10,7 @@ import {
   TableCell,
   Heading
 } from 'grommet'
-import { Container } from './styles'
+import { Container, StyledLink } from './styles'
 // import { Mutation } from 'react-apollo'
 
 class Profile extends Component {
@@ -49,21 +49,22 @@ class Profile extends Component {
           <Table alignSelf="center" margin="xsmall">
             <TableBody>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  textDecoration="underline"
-                  hover={{ textDecoration: 'none' }}
-                  label="Sign In"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="/LogIn">
+                  <Anchor
+                    hover={{ textDecoration: 'none' }}
+                    label="Log In"
+                    color="dark-2"
+                  />
+                </StyledLink>
               </TableCell>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  hover={{ textDecoration: 'none' }}
-                  label="Sign Up"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="/Register">
+                  <Anchor
+                    hover={{ textDecoration: 'none' }}
+                    label="Sign Up"
+                    color="dark-2"
+                  />
+                </StyledLink>
               </TableCell>
             </TableBody>
           </Table>

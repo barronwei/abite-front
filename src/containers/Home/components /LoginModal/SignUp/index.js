@@ -1,6 +1,15 @@
 import React, { Component } from 'react'
-import { Title, SubmitButton, SecondaryOptionText, Container } from './styles'
-import { Box, FormField, TextInput, Heading } from 'grommet'
+import { Title, SubmitButton, StyledLink, Container } from './styles'
+import {
+  Box,
+  FormField,
+  TextInput,
+  Heading,
+  Table,
+  TableBody,
+  TableCell,
+  Anchor
+} from 'grommet'
 import Navbar from '../../../../../components/Navbar'
 import Welcome from '../../../../../components/Welcome'
 import { Mutation } from 'react-apollo'
@@ -75,12 +84,30 @@ class SignUp extends Component {
                 </SubmitButton>
               )}
             </Mutation>
+            <Table alignSelf="center" margin="xsmall">
+              <TableBody>
+                <TableCell verticalAlign="bottom">
+                  <StyledLink to="/">
+                    <Anchor
+                      hover={{ textDecoration: 'none' }}
+                      label="Home"
+                      color="dark-2"
+                    />
+                  </StyledLink>
+                </TableCell>
+                <TableCell verticalAlign="bottom">
+                  <StyledLink to="/LogIn">
+                    <Anchor
+                      hover={{ textDecoration: 'none' }}
+                      label="Log In"
+                      color="dark-2"
+                    />
+                  </StyledLink>
+                </TableCell>
+              </TableBody>
+            </Table>
           </Box>
         </Container>
-
-        <SecondaryOptionText onClick={this.props.changeMode}>
-          Or Login
-        </SecondaryOptionText>
       </React.Fragment>
     )
   }

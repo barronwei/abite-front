@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
-import { Title, SecondaryOptionText, Container, SubmitButton } from './styles'
+import { Title, StyledLink, Container, SubmitButton } from './styles'
 import Navbar from '../../../../../components/Navbar'
 import Welcome from '../../../../../components/Welcome'
 import { Mutation } from 'react-apollo'
 import LOGIN_USER from './graphql'
-import { Box, FormField, TextInput, Heading } from 'grommet'
+import {
+  Box,
+  FormField,
+  TextInput,
+  Heading,
+  Table,
+  TableBody,
+  TableCell,
+  Anchor
+} from 'grommet'
 
 class Login extends Component {
   constructor(props) {
@@ -53,30 +62,30 @@ class Login extends Component {
                 </SubmitButton>
               )}
             </Mutation>
-            <SecondaryOptionText
-              onClick={this.props.changeMode}
-              alignSelf="center"
-            >
-              Or Sign Up
-            </SecondaryOptionText>
+            <Table alignSelf="center" margin="xsmall">
+              <TableBody>
+                <TableCell verticalAlign="bottom">
+                  <StyledLink to="/">
+                    <Anchor
+                      hover={{ textDecoration: 'none' }}
+                      label="Home"
+                      color="dark-2"
+                    />
+                  </StyledLink>
+                </TableCell>
+                <TableCell verticalAlign="bottom">
+                  <StyledLink to="/Register">
+                    <Anchor
+                      hover={{ textDecoration: 'none' }}
+                      label="Sign Up"
+                      color="dark-2"
+                    />
+                  </StyledLink>
+                </TableCell>
+              </TableBody>
+            </Table>
           </Box>
         </Container>
-        {/* <Mutation mutation={LOGIN_USER}>
-          {(loginUser, { data }) => (
-            <Button
-              onClick={() => {
-                loginUser({
-                  variables: {
-                    email: this.state.email,
-                    password: this.state.password
-                  }
-                })
-              }}
-            >
-              Login
-            </Button>
-          )}
-        </Mutation> */}
       </React.Fragment>
     )
   }

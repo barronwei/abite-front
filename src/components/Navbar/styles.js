@@ -12,6 +12,6 @@ export const Container = styled(Flex)`
 `
 
 export const StyledLink = styled(Link)`
-  font-size: 1.5rem;
-  color: salmon;
+  font-size: 0.8rem;
+  color: gray;
 `
