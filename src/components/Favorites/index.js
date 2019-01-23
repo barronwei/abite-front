@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import {
+  Box,
+  Heading,
   FormField,
   TextInput,
   Button,
-  Box,
-  Anchor,
   Table,
   TableBody,
   TableCell,
-  Heading
+  Anchor,
+  Menu
 } from 'grommet'
 import { Container } from './styles'
 // import { Mutation } from 'react-apollo'
 
-class Profile extends Component {
+class Favorites extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -29,12 +30,25 @@ class Profile extends Component {
     return (
       <Container>
         <Box border={{ color: 'dark-1' }} pad="xlarge">
-          <Heading level={3} alignSelf="center" color="dark-2">
+          <Heading
+            level={1}
+            alignSelf="center"
+            color="dark-2"
+            margin={{ vertical: 'none' }}
+          >
             A Bite of Home
+          </Heading>
+          <Heading
+            level={4}
+            alignSelf="center"
+            color="dark-2"
+            margin={{ top: 'medium' }}
+          >
+            Add Favorites
           </Heading>
           <FormField>
             <TextInput
-              placeholder="Town"
+              placeholder="Restaurant"
               size="medium"
               onChange={e => this.onChange('email', e)}
             />
@@ -42,25 +56,55 @@ class Profile extends Component {
           <Button
             margin="xsmall"
             type="Submit"
-            label="Bite"
+            label="Add"
             color="dark-2"
             onClick={() => {}}
+          />
+          <Heading
+            level={4}
+            alignSelf="center"
+            color="dark-2"
+            margin={{ top: 'medium' }}
+          >
+            Remove Favorites
+          </Heading>
+          <Menu
+            alignSelf="center"
+            label="Favorites"
+            margin="small"
+            size="medium"
+            items={[
+              { label: 'First', onClick: {} },
+              { label: 'Second', onClick: {} }
+            ]}
           />
           <Table alignSelf="center" margin="xsmall">
             <TableBody>
               <TableCell verticalAlign="bottom">
                 <Anchor
+                  size="small"
                   textDecoration="underline"
                   hover={{ textDecoration: 'none' }}
-                  label="Sign In"
+                  label="Search"
                   color="dark-2"
                   onClick={() => {}}
                 />
               </TableCell>
               <TableCell verticalAlign="bottom">
                 <Anchor
+                  size="small"
+                  textDecoration="underline"
                   hover={{ textDecoration: 'none' }}
-                  label="Sign Up"
+                  label="Sign Out"
+                  color="dark-2"
+                  onClick={() => {}}
+                />
+              </TableCell>
+              <TableCell verticalAlign="bottom">
+                <Anchor
+                  size="small"
+                  hover={{ textDecoration: 'none' }}
+                  label="Profile"
                   color="dark-2"
                   onClick={() => {}}
                 />
@@ -73,4 +117,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile
+export default Favorites

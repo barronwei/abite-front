@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { ApolloProvider } from 'react-apollo'
-import theme from './theme'
+import { theme, grommetTheme } from './theme'
 import config from './config'
 import { Grommet } from 'grommet'
 import Home from './containers/Home/'
@@ -15,18 +15,10 @@ const client = new ApolloClient({
   uri: config.graphqlUrl
 })
 
-const myTheme = {
-  global: {
-    font: {
-      family: 'Roboto'
-    }
-  }
-}
-
 class App extends Component {
   render() {
     return (
-      <Grommet plain>
+      <Grommet theme={grommetTheme}>
         <Router>
           <ThemeProvider theme={theme}>
             <ApolloProvider client={client}>
