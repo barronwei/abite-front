@@ -44,7 +44,7 @@ class Login extends Component {
                 <TextInput onChange={e => this.onChange('password', e)} />
               </FormField>
               <Mutation mutation={LOGIN_USER}>
-                {(loginUser, { data }) => (
+                {loginUser => (
                   <Button
                     margin="xsmall"
                     label="Log-In"
@@ -59,6 +59,15 @@ class Login extends Component {
                           password: this.state.password
                         }
                       })
+                    }}
+                    onCompleted={data => {
+                      if (data.loginUser.success) {
+                        const {
+                          loginUser: { token }
+                        } = data
+                        localStorage.setItem('token', token)
+                        this.props.authenticateUser()
+                      }
                     }}
                   />
                 )}
