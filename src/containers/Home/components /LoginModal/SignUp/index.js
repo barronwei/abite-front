@@ -28,6 +28,7 @@ class SignUp extends Component {
 
   onChange = (key, e) => {
     this.setState({ [key]: e.target.value })
+    console.log(e)
   }
 
   render() {
@@ -88,7 +89,6 @@ class SignUp extends Component {
                         createUser: { token }
                       } = data
                       localStorage.setItem('token', token)
-                      this.props.history.push('/')
                       this.props.authenticateUser()
                     }
                     return <div>data.createdUser.error.message</div>
@@ -125,5 +125,4 @@ class SignUp extends Component {
   }
 }
 
-console.log(this.state.title)
 export default SignUp
