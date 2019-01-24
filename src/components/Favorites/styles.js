@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Flex } from 'grid-styled'
+import { Link } from 'react-router-dom'
 
 export const Title = styled(Flex)`
   color: #2473f2;
@@ -40,4 +41,9 @@ export const Container = styled(Flex)`
   justify-content: center;
   align-items: center;
   height: 100vh;
+`
+export const StyledLink = styled(Link)`
+  font-size: 0.8rem;
+  color: gray;
+  text-decoration: none;
 `

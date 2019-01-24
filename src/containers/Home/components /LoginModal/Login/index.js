@@ -59,6 +59,7 @@ class Login extends Component {
                           password: this.state.password
                         }
                       })
+                      document.location.href = 'Profile'
                     }}
                     onCompleted={data => {
                       if (data.loginUser.success) {

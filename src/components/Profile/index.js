@@ -9,7 +9,7 @@ import {
   Heading,
   Text
 } from 'grommet'
-import { Container } from './styles'
+import { Container, StyledLink } from './styles'
 // import { Mutation } from 'react-apollo'
 
 const name = 'Barron'
@@ -85,33 +85,37 @@ class Profile extends Component {
           <Table alignSelf="center" margin="medium">
             <TableBody>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  size="small"
-                  textDecoration="underline"
-                  hover={{ textDecoration: 'none' }}
-                  label="Search"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="/">
+                  <Anchor
+                    size="small"
+                    textDecoration="underline"
+                    hover={{ textDecoration: 'none' }}
+                    label="Search"
+                    color="dark-2"
+                  />
+                </StyledLink>
               </TableCell>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  size="small"
-                  textDecoration="underline"
-                  hover={{ textDecoration: 'none' }}
-                  label="Sign Out"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="/">
+                  <Anchor
+                    size="small"
+                    textDecoration="underline"
+                    hover={{ textDecoration: 'none' }}
+                    label="Sign Out"
+                    color="dark-2"
+                  />
+                </StyledLink>
               </TableCell>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  size="small"
-                  hover={{ textDecoration: 'none' }}
-                  label="Favorites"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="/Favorites">
+                  <Anchor
+                    size="small"
+                    hover={{ textDecoration: 'none' }}
+                    label="Favorites"
+                    color="dark-2"
+                    onClick={() => {}}
+                  />
+                </StyledLink>
               </TableCell>
             </TableBody>
           </Table>

@@ -12,7 +12,7 @@ import {
   Anchor,
   Menu
 } from 'grommet'
-import { Container } from './styles'
+import { Container, StyledLink } from './styles'
 // import { Mutation } from 'react-apollo'
 
 class Favorites extends Component {
@@ -90,33 +90,39 @@ class Favorites extends Component {
           <Table alignSelf="center" margin="xsmall">
             <TableBody>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  size="small"
-                  textDecoration="underline"
-                  hover={{ textDecoration: 'none' }}
-                  label="Search"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="/">
+                  <Anchor
+                    size="small"
+                    textDecoration="underline"
+                    hover={{ textDecoration: 'none' }}
+                    label="Search"
+                    color="dark-2"
+                    onClick={() => {}}
+                  />
+                </StyledLink>
               </TableCell>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  size="small"
-                  textDecoration="underline"
-                  hover={{ textDecoration: 'none' }}
-                  label="Sign Out"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="/">
+                  <Anchor
+                    size="small"
+                    textDecoration="underline"
+                    hover={{ textDecoration: 'none' }}
+                    label="Sign Out"
+                    color="dark-2"
+                    onClick={() => {}}
+                  />
+                </StyledLink>
               </TableCell>
               <TableCell verticalAlign="bottom">
-                <Anchor
-                  size="small"
-                  hover={{ textDecoration: 'none' }}
-                  label="Profile"
-                  color="dark-2"
-                  onClick={() => {}}
-                />
+                <StyledLink to="Profile">
+                  <Anchor
+                    size="small"
+                    hover={{ textDecoration: 'none' }}
+                    label="Profile"
+                    color="dark-2"
+                    onClick={() => {}}
+                  />
+                </StyledLink>
               </TableCell>
             </TableBody>
           </Table>
