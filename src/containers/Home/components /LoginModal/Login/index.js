@@ -31,7 +31,6 @@ class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <Favorites />
         <Container>
           <Box border={{ color: 'dark-1' }} pad="xlarge" elevation="xlarge">
             <Heading size="small" color="dark-2">
