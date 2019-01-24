@@ -11,7 +11,6 @@ import {
 } from 'grommet'
 import { Container, StyledLink, Wrapper } from './styles'
 import LocationSearchInput from './components/LocationSearchInput'
-// import { Mutation } from 'react-apollo'
 
 class Profile extends Component {
   constructor(props) {

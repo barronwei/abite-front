@@ -56,3 +56,7 @@ export const StyledLink = styled(Link)`
   color: gray;
   text-decoration: none;
 `
+
+export const Wrapper = styled.section`
+  width: 50%;
+`
