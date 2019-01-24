@@ -4,6 +4,7 @@ import {
   Heading,
   FormField,
   TextInput,
+  TextArea,
   Button,
   Table,
   TableBody,
@@ -18,7 +19,8 @@ class Favorites extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      value: ''
+      value: '',
+      content: ''
     }
   }
 
@@ -51,6 +53,13 @@ class Favorites extends Component {
               placeholder="Restaurant"
               size="medium"
               onChange={e => this.onChange('email', e)}
+            />
+          </FormField>
+          <FormField>
+            <TextArea
+              placeholder="Tell Us More!"
+              size="large"
+              onChange={e => this.onChange('content', e)}
             />
           </FormField>
           <Button

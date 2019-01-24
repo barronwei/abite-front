@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Title, StyledLink, Container, SubmitButton } from './styles'
-import Navbar from '../../../../../components/Navbar'
-import Welcome from '../../../../../components/Welcome'
+import { Title, StyledLink, Container } from './styles'
 import { Mutation } from 'react-apollo'
 import LOGIN_USER from './graphql'
 import {
@@ -12,8 +10,10 @@ import {
   Table,
   TableBody,
   TableCell,
-  Anchor
+  Anchor,
+  Button
 } from 'grommet'
+import Favorites from '../../../../../components/Favorites'
 
 class Login extends Component {
   constructor(props) {
@@ -31,12 +31,12 @@ class Login extends Component {
   render() {
     return (
       <React.Fragment>
-        <Welcome />
-        <Navbar />
-
+        <Favorites />
         <Container>
-          <Box border={{ color: 'dark-1' }} pad="xlarge">
-            <Heading size="small">A Bite Of Home</Heading>
+          <Box border={{ color: 'dark-1' }} pad="xlarge" elevation="xlarge">
+            <Heading size="small" color="dark-2">
+              A Bite Of Home
+            </Heading>
             <Title>Welcome Back!</Title>
             <FormField label="Email">
               <TextInput onChange={e => this.onChange('email', e)} />
@@ -46,9 +46,13 @@ class Login extends Component {
             </FormField>
             <Mutation mutation={LOGIN_USER}>
               {(loginUser, { data }) => (
-                <SubmitButton
+                <Button
+                  margin="xsmall"
+                  label="Log-In"
+                  color="dark-2"
                   type="submit"
                   size="large"
+                  alignSelf="center"
                   onClick={() => {
                     loginUser({
                       variables: {
@@ -57,9 +61,7 @@ class Login extends Component {
                       }
                     })
                   }}
-                >
-                  Login
-                </SubmitButton>
+                />
               )}
             </Mutation>
             <Table alignSelf="center" margin="xsmall">

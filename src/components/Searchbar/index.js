@@ -28,7 +28,7 @@ class Profile extends Component {
   render() {
     return (
       <Container>
-        <Box border={{ color: 'dark-1' }} pad="xlarge">
+        <Box border={{ color: 'dark-1' }} pad="xlarge" elevation="large">
           <Heading level={3} alignSelf="center" color="dark-2">
             A Bite of Home
           </Heading>

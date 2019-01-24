@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Title, SubmitButton, StyledLink, Container } from './styles'
+import { Title, StyledLink, Container } from './styles'
 import {
   Box,
   FormField,
@@ -8,10 +8,9 @@ import {
   Table,
   TableBody,
   TableCell,
-  Anchor
+  Anchor,
+  Button
 } from 'grommet'
-import Navbar from '../../../../../components/Navbar'
-import Welcome from '../../../../../components/Welcome'
 import { Mutation } from 'react-apollo'
 import CREATE_USER from './graphql'
 // import { isUndefined } from 'util'
@@ -34,11 +33,11 @@ class SignUp extends Component {
   render() {
     return (
       <React.Fragment>
-        <Welcome />
-        <Navbar />
         <Container>
-          <Box border={{ color: 'dark-1' }} pad="xlarge">
-            <Heading size="small">A Bite Of Home</Heading>
+          <Box border={{ color: 'dark-1' }} pad="xlarge" elevation="xlarge">
+            <Heading size="small" color="dark-2">
+              A Bite Of Home
+            </Heading>
             <Title>Tell Us About Yourself</Title>
             <FormField>
               <TextInput
@@ -66,7 +65,11 @@ class SignUp extends Component {
             </FormField>
             <Mutation mutation={CREATE_USER}>
               {createUser => (
-                <SubmitButton
+                <Button
+                  margin="xsmall"
+                  type="Submit"
+                  label="Sign Up!"
+                  color="dark-2"
                   onClick={() => {
                     createUser({
                       variables: {
@@ -79,9 +82,18 @@ class SignUp extends Component {
                       }
                     })
                   }}
-                >
-                  Get Started
-                </SubmitButton>
+                  onCompleted={data => {
+                    if (data.createUser.sucess) {
+                      const {
+                        createUser: { token }
+                      } = data
+                      localStorage.setItem('token', token)
+                      this.props.history.push('/')
+                      this.props.authenticateUser()
+                    }
+                    return <div>data.createdUser.error.message</div>
+                  }}
+                />
               )}
             </Mutation>
             <Table alignSelf="center" margin="xsmall">
