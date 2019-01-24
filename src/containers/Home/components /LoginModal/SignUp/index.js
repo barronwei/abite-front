@@ -83,12 +83,11 @@ class SignUp extends Component {
                     })
                   }}
                   onCompleted={data => {
-                    if (data.createUser.sucess) {
+                    if (data.createUser.success) {
                       const {
                         createUser: { token }
                       } = data
                       localStorage.setItem('token', token)
-                      this.props.history.push('/')
                       this.props.authenticateUser()
                     }
                     return <div>data.createdUser.error.message</div>

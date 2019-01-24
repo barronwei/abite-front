@@ -11,6 +11,7 @@ import {
   Heading
 } from 'grommet'
 import { Container, StyledLink } from './styles'
+import LocationSearchInput from './components/LocationSearchInput'
 // import { Mutation } from 'react-apollo'
 
 class Profile extends Component {
@@ -33,11 +34,7 @@ class Profile extends Component {
             A Bite of Home
           </Heading>
           <FormField>
-            <TextInput
-              placeholder="Town"
-              size="medium"
-              onChange={e => this.onChange('email', e)}
-            />
+            <LocationSearchInput />
           </FormField>
           <Button
             margin="xsmall"
