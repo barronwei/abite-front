@@ -58,9 +58,7 @@ class SignUp extends Component {
                   onChange={e => this.onChange('password', e)}
                 />
               </FormField>
-              <FormField>
-                <LocationSearchInput />
-              </FormField>
+              <LocationSearchInput />
               <Mutation mutation={CREATE_USER}>
                 {createUser => (
                   <Button

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-  FormField,
   Button,
   Box,
   Anchor,
@@ -31,9 +30,7 @@ class Profile extends Component {
             <Heading level={3} alignSelf="center" color="dark-2">
               A Bite of Home
             </Heading>
-            <FormField>
-              <LocationSearchInput />
-            </FormField>
+            <LocationSearchInput />
             <Button
               margin="xsmall"
               type="Submit"
