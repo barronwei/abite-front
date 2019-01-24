@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import SearchBar from '../../components/Searchbar'
-import Navbar from '../../components/Navbar/'
 // import LoginModal from '../Home/components/LoginModal'
 
 class Home extends Component {
@@ -8,7 +7,6 @@ class Home extends Component {
     return (
       <React.Fragment>
         <SearchBar />
-        <Navbar />
       </React.Fragment>
     )
   }

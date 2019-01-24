@@ -125,4 +125,5 @@ class SignUp extends Component {
   }
 }
 
+console.log(this.state.title)
 export default SignUp

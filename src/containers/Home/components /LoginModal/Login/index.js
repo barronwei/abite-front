@@ -13,7 +13,6 @@ import {
   Anchor,
   Button
 } from 'grommet'
-import Favorites from '../../../../../components/Favorites'
 
 class Login extends Component {
   constructor(props) {

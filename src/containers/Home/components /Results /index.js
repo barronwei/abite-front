@@ -1,32 +1,35 @@
 import React, { Component } from 'react'
-import Welcome from '../../../../components/Welcome'
-import {Box} from 'grommet'
+import { Box, Button } from 'grommet'
 import { Mutation } from 'react-apollo'
 
 class Results extends Component {
-  
   constructor(props) {
-      super(props) {
-      this.state = {
-          title: []
-
-
+    super(props)
+    this.state = {
+      titles: []
     }
   }
-  }; 
-  
-  const listTitles = async arr.map(arr) => ( 
-    <li>
-        <Box>
-            arr
+
+  listTitles = this.state.titles.map(el => {
+    return (
+      <li>
+        <Box border={{ color: 'dark-1' }}>
+          {el}
+          <Button>Comments</Button>
         </Box>
-    </li> 
-  );   
-  
-  
-    render() {
-    ;<React.Component>
-       <listTitles/>
-    </React.Component>
+      </li>
+    )
+  })
+
+  render() {
+    return (
+      <React.Component>
+        <ul>
+          <listTitles />
+        </ul>
+      </React.Component>
+    )
   }
 }
+
+export default Results
