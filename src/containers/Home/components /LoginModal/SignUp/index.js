@@ -28,7 +28,6 @@ class SignUp extends Component {
 
   onChange = (key, e) => {
     this.setState({ [key]: e.target.value })
-    console.log(e)
   }
 
   render() {
@@ -84,7 +83,7 @@ class SignUp extends Component {
                     })
                   }}
                   onCompleted={data => {
-                    if (data.createUser.sucess) {
+                    if (data.createUser.success) {
                       const {
                         createUser: { token }
                       } = data

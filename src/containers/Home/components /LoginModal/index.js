@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from './styles'
-import Login from './components/Login'
-import SignUp from './components/SignUp'
+import Login from './components/LoginModal/Login'
+import SignUp from './components/LoginModal/SignUp'
 
 const Content = ({ loginMode, toggleLoginMode }) => {
   if (loginMode) {
