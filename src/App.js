@@ -9,6 +9,8 @@ import Home from './containers/Home/'
 import ApolloClient from 'apollo-boost'
 import Login from './containers/Home/components /LoginModal/Login'
 import SignUp from './containers/Home/components /LoginModal/SignUp'
+import Profile from './components/Profile'
+import Favorites from './components/Favorites'
 
 // creates new client
 const client = new ApolloClient({
@@ -27,6 +29,8 @@ class App extends Component {
                   <Route exact path="/" component={Home} />
                   <Route exact path="/Login" component={Login} />
                   <Route exact path="/Register" component={SignUp} />
+                  <Route exact path="/Profile" component={Profile} />
+                  <Route exact path="/Favorites" component={Favorites} />
                 </Switch>
               </div>
             </ApolloProvider>
