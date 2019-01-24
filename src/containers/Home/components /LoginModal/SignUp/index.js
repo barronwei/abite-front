@@ -60,7 +60,7 @@ class SignUp extends Component {
             <FormField>
               <TextInput
                 placeholder="What is your Hometown?"
-                onChange={e => this.onChange('name', e)}
+                onChange={e => this.onChange('hometown', e)}
               />
             </FormField>
             <Mutation mutation={CREATE_USER}>
@@ -125,5 +125,4 @@ class SignUp extends Component {
   }
 }
 
-console.log(this.state.title)
 export default SignUp
