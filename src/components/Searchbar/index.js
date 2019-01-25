@@ -41,7 +41,7 @@ class Profile extends Component {
             />
             <Button
               margin="xsmall"
-              type="Submit"
+              type="submit"
               label="Bite"
               color="dark-2"
               onClick={() => console.log(this.state.value)}
