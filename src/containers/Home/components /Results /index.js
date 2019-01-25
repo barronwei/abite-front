@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Box, Button } from 'grommet'
-import { Mutation } from 'react-apollo'
+import { Mutation, graphql } from 'react-apollo'
+import { SEARCH_RESULTS } from './graphql'
 
 class Results extends Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class Results extends Component {
       titles: []
     }
   }
+
+  populateList = this.setState({ titles: ResultsQuery, ...this.state.titles })
 
   listTitles = this.state.titles.map(el => {
     return (
@@ -32,4 +35,5 @@ class Results extends Component {
   }
 }
 
+const ResultsQuery = graphql(SEARCH_RESULTS, { name: 'retrieveresultsQuery' })
 export default Results
