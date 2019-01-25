@@ -33,7 +33,7 @@ class Login extends Component {
         <Container>
           <Wrapper>
             <Box border={{ color: 'dark-1' }} pad="xlarge" elevation="xlarge">
-              <Heading size="small" color="dark-2">
+              <Heading size="small" color="dark-2" alignSelf="center">
                 A Bite Of Home
               </Heading>
               <Title>Welcome Back!</Title>
