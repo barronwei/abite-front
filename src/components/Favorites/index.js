@@ -69,14 +69,6 @@ class Favorites extends Component {
             color="dark-2"
             onClick={() => {}}
           />
-          <Heading
-            level={4}
-            alignSelf="center"
-            color="dark-2"
-            margin={{ top: 'medium' }}
-          >
-            Remove Favorites
-          </Heading>
           <Menu
             alignSelf="center"
             label="Favorites"
