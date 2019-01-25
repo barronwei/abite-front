@@ -84,23 +84,31 @@ class SignUp extends Component {
                     color="dark-2"
                     onClick={() => {
                       if (this.state.select) {
-                        console.log(this.state.restaurant)
-                        createUser({
-                          variables: {
-                            input: {
-                              name: this.state.name,
-                              email: this.state.email,
-                              password: this.state.password,
-                              hometown: this.state.hometown,
-                              restaurant: this.state.restaurant
+                        if (
+                          this.state.name &&
+                          this.state.email &&
+                          this.state.password &&
+                          this.state.restaurant
+                        ) {
+                          createUser({
+                            variables: {
+                              input: {
+                                name: this.state.name,
+                                email: this.state.email,
+                                password: this.state.password,
+                                hometown: this.state.hometown,
+                                restaurant: this.state.restaurant
+                              }
                             }
-                          }
-                        })
+                          })
+                        } else {
+                          alert('Please complete all fields.')
+                        }
                       } else {
                         alert('Please select from list of hometowns!')
                       }
                     }}
-                    onSuccess={data => {
+                    onComplete={data => {
                       if (data.createUser.success) {
                         const {
                           createUser: { token }

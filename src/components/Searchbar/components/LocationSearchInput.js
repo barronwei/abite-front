@@ -12,11 +12,13 @@ class LocationSearchInput extends React.Component {
 
   handleChange = address => {
     this.setState({ address })
+    this.props.onValue('value', address)
   }
 
   //-------------------------------------------------------------------------------
   handleSelect = address => {
     this.setState({ address })
+    this.props.onValue('value', address)
     // console.log(address)
     // geocodeByAddress(address)
     //   .then(results => getLatLng(results[0]))
@@ -42,7 +44,7 @@ class LocationSearchInput extends React.Component {
               })}
             />
             <div className="autocomplete-dropdown-container">
-              {suggestions.map(suggestion => {
+              {suggestions.slice(2).map(suggestion => {
                 const className = suggestion.active
                   ? 'suggestion-item--active'
                   : 'suggestion-item'

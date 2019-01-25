@@ -22,6 +22,11 @@ class Profile extends Component {
   onChange = (key, e) => {
     this.setState({ [key]: e.target.value })
   }
+
+  onValue = (key, value) => {
+    this.setState({ [key]: value })
+  }
+
   render() {
     return (
       <Container>
@@ -30,13 +35,16 @@ class Profile extends Component {
             <Heading level={3} alignSelf="center" color="dark-2">
               A Bite of Home
             </Heading>
-            <LocationSearchInput />
+            <LocationSearchInput
+              value={this.state.value}
+              onValue={this.onValue}
+            />
             <Button
               margin="xsmall"
               type="Submit"
               label="Bite"
               color="dark-2"
-              onClick={() => {}}
+              onClick={() => console.log(this.state.value)}
             />
             <Table alignSelf="center" margin="xsmall">
               <TableBody>

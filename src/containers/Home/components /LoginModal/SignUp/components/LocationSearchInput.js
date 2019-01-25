@@ -50,7 +50,7 @@ class LocationSearchInput extends React.Component {
               })}
             />
             <div className="autocomplete-dropdown-container">
-              {suggestions.map(suggestion => {
+              {suggestions.slice(2).map(suggestion => {
                 const className = suggestion.active
                   ? 'suggestion-item--active'
                   : 'suggestion-item'
