@@ -12,11 +12,19 @@ class LocationSearchInput extends React.Component {
 
   handleChange = address => {
     this.setState({ address })
+    this.props.onHome('hometown', address)
+    this.props.onHome('select', false)
+    // console.log(this.props.hometown)
+    // console.log(this.props.select)
   }
 
   //-------------------------------------------------------------------------------
   handleSelect = address => {
     this.setState({ address })
+    this.props.onHome('hometown', address)
+    this.props.onHome('select', true)
+    // console.log(this.props.hometown)
+    // console.log(this.props.select)
     // console.log(address)
     // geocodeByAddress(address)
     //   .then(results => getLatLng(results[0]))

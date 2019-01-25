@@ -64,7 +64,7 @@ class Favorites extends Component {
           </FormField>
           <Button
             margin="xsmall"
-            type="Submit"
+            type="submit"
             label="Add"
             color="dark-2"
             onClick={() => {}}

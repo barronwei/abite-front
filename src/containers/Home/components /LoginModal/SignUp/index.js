@@ -22,12 +22,18 @@ class SignUp extends Component {
       name: '',
       email: '',
       password: '',
-      hometown: ''
+      hometown: '',
+      restaurant: '',
+      select: false
     }
   }
 
   onChange = (key, e) => {
     this.setState({ [key]: e.target.value })
+  }
+
+  onHome = (key, hometown) => {
+    this.setState({ [key]: hometown })
   }
 
   render() {
@@ -58,27 +64,43 @@ class SignUp extends Component {
                   onChange={e => this.onChange('password', e)}
                 />
               </FormField>
-              <LocationSearchInput />
+              <LocationSearchInput
+                onHome={this.onHome}
+                hometown={this.state.hometown}
+                select={this.state.select}
+              />
+              <FormField>
+                <TextInput
+                  placeholder="Restaurant"
+                  onChange={e => this.onChange('restaurant', e)}
+                />
+              </FormField>
               <Mutation mutation={CREATE_USER}>
                 {createUser => (
                   <Button
                     margin="xsmall"
-                    type="Submit"
+                    type="submit"
                     label="Sign Up!"
                     color="dark-2"
                     onClick={() => {
-                      createUser({
-                        variables: {
-                          input: {
-                            name: this.state.name,
-                            email: this.state.email,
-                            password: this.state.password,
-                            hometown: this.state.hometown
+                      if (this.state.select) {
+                        console.log(this.state.restaurant)
+                        createUser({
+                          variables: {
+                            input: {
+                              name: this.state.name,
+                              email: this.state.email,
+                              password: this.state.password,
+                              hometown: this.state.hometown,
+                              restaurant: this.state.restaurant
+                            }
                           }
-                        }
-                      })
+                        })
+                      } else {
+                        alert('Please select from list of hometowns!')
+                      }
                     }}
-                    onCompleted={data => {
+                    onSuccess={data => {
                       if (data.createUser.success) {
                         const {
                           createUser: { token }

@@ -61,7 +61,7 @@ class Login extends Component {
                       })
                       document.location.href = 'Profile'
                     }}
-                    onCompleted={data => {
+                    onComplete={data => {
                       if (data.loginUser.success) {
                         const {
                           loginUser: { token }
